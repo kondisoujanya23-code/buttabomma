@@ -393,9 +393,14 @@
       margin-left: 8px;
       font-weight: 300;
     }
-    .product-info .whatsapp-btn {
-      display: inline-flex; align-items: center; gap: 6px;
+    .product-actions {
+      display: flex;
+      gap: 8px;
       margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .product-actions .whatsapp-btn {
+      display: inline-flex; align-items: center; gap: 6px;
       padding: 8px 16px;
       background: #25D366;
       color: var(--white);
@@ -405,9 +410,29 @@
       cursor: pointer;
       transition: var(--transition);
       text-decoration: none;
+      flex: 1;
+      justify-content: center;
     }
-    .product-info .whatsapp-btn:hover {
+    .product-actions .whatsapp-btn:hover {
       background: #128C7E;
+    }
+    .product-actions .view-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      flex: 1;
+      justify-content: center;
+    }
+    .product-actions .view-btn:hover {
+      background: var(--primary);
+      color: var(--white);
     }
 
     /* INSTAGRAM REELS */
@@ -666,6 +691,75 @@
       50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.6); }
     }
 
+    /* VIEW MODAL */
+    .view-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .view-modal.active {
+      display: flex;
+    }
+    .view-modal-content {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      background: var(--white);
+      padding: 16px;
+      border-radius: 4px;
+    }
+    .view-modal-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .view-modal-close {
+      position: absolute;
+      top: -40px; right: 0;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+      transition: var(--transition);
+    }
+    .view-modal-close:hover {
+      color: var(--secondary);
+    }
+    .view-modal-name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--primary);
+      text-align: center;
+      margin-top: 12px;
+    }
+    .view-modal-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 12px;
+      background: #25D366;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+      transition: var(--transition);
+    }
+    .view-modal-wa:hover {
+      background: #128C7E;
+    }
+    @media (max-width: 768px) {
+      .view-modal { padding: 20px; }
+    }
+
     /* REVEAL ANIMATION */
     .reveal {
       opacity: 0;
@@ -722,6 +816,23 @@
       .product-img-wrap { height: 200px; }
       .hero-title { font-size: 2.5rem; }
     }
+
+    /* FAQ */
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(75,16,36,0.1); padding: 0; }
+    .faq-question {
+      width: 100%; background: none; border: none; padding: 20px 0;
+      font-family: var(--font-heading); font-size: 1.05rem; color: var(--primary);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      text-align: left; gap: 16px;
+    }
+    .faq-question i { transition: var(--transition); font-size: 0.85rem; color: var(--secondary); }
+    .faq-item.active .faq-question i { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; padding: 0;
+      color: var(--text-light); font-size: 0.95rem; line-height: 1.7;
+    }
+    .faq-item.active .faq-answer { max-height: 300px; padding: 0 0 20px 0; }
   </style>
 </head>
 <body>
@@ -730,7 +841,7 @@
   <nav class="navbar" id="navbar">
      <a href="#" class="nav-logo"><img src="logo.jpg" alt="The Buttabomma" style="max-height:42px;width:auto;display:block;"></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#categories">Categories</a></li>
+      <li><a href="#categories">Shop</a></li>
       <li><a href="#new-arrivals">New Arrivals</a></li>
       <li><a href="#best-sellers">Best Sellers</a></li>
       <li><a href="#reviews">Reviews</a></li>
@@ -761,42 +872,6 @@
     </div>
   </section>
 
-  <!-- CATEGORIES -->
-  <section class="section" id="categories">
-    <div class="section-header reveal">
-      <span class="section-label">Curated Collections</span>
-      <h2 class="section-title">Shop by Category</h2>
-      <div class="divider"></div>
-      <p class="section-desc">Explore our handpicked collections crafted for every occasion.</p>
-    </div>
-    <div class="categories-grid">
-      <div class="cat-card reveal" onclick="window.location.href='https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%27m%20interested%20in%20Designer%20Kurtis'">
-        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80" alt="Designer Kurtis" loading="lazy">
-        <div class="cat-overlay"></div>
-        <div class="cat-info">
-          <h3>Designer Kurtis</h3>
-          <span>Explore <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-      <div class="cat-card reveal" onclick="window.location.href='https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%27m%20interested%20in%20Ethnic%20Sets'">
-        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80" alt="Ethnic Sets" loading="lazy">
-        <div class="cat-overlay"></div>
-        <div class="cat-info">
-          <h3>Ethnic Sets</h3>
-          <span>Explore <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-      <div class="cat-card reveal" onclick="window.location.href='https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%27m%20interested%20in%20Couture%20Collection'">
-        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80" alt="Couture Collection" loading="lazy">
-        <div class="cat-overlay"></div>
-        <div class="cat-info">
-          <h3><p data-pm-slice="1 1 []">lehenga collection</p></h3>
-          <span>Explore <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- NEW ARRIVALS -->
   <section class="section" id="new-arrivals">
     <div class="section-header reveal">
@@ -808,48 +883,217 @@
     <div class="products-grid">
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80" alt=" Ivory Silk Kurti" loading="lazy">
+          <img src="summer1.png" alt="Summer Edit Dress" loading="lazy">
           <span class="product-tag">New</span>
         </div>
         <div class="product-info">
-          <h4>Summer edits</h4>
+          <h4>Summer Edit</h4>
           <div class="product-price">&#8377;2,499 <span class="original">&#8377;3,999</span></div>
-          <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Ivory%20Silk%20Kurti%20%E2%82%B9%202,499" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</a>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Summer%20Edit%20Dress%20%E2%82%B9%202,499" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('summer1.png', 'Summer Edit')">View</button>
+          </div>
         </div>
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80" alt="Maroon Embroidered Kurta" loading="lazy">
+          <img src="summer2.png" alt="Summer Edit 2 Dress" loading="lazy">
           <span class="product-tag">New</span>
         </div>
         <div class="product-info">
-          <h4>Royal Elegance</h4>
-          <div class="product-price">&#8377;3,299 <span class="original">&#8377;4,999</span></div>
-          <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Maroon%20Embroidered%20Kurta%20%E2%82%B9%203,299" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</a>
+          <h4>Summer Edit 2</h4>
+          <div class="product-price">&#8377;2,799 <span class="original">&#8377;3,999</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Summer%20Edit%202%20Dress%20%E2%82%B9%202,799" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('summer2.png', 'Summer Edit 2')">View</button>
+          </div>
         </div>
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80" alt="Gold Tissue Sharara Set" loading="lazy">
+          <img src="summer3.png" alt="Summer Edit 3 Dress" loading="lazy">
           <span class="product-tag">New</span>
         </div>
         <div class="product-info">
-          <h4>Everyday Grace</h4>
-          <div class="product-price">&#8377;5,999 <span class="original">&#8377;7,999</span></div>
-          <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Gold%20Tissue%20Sharara%20Set%20%E2%82%B9%205,999" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</a>
+          <h4>Summer Edit 3</h4>
+          <div class="product-price">&#8377;2,599 <span class="original">&#8377;3,999</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Summer%20Edit%203%20Dress%20%E2%82%B9%202,599" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('summer3.png', 'Summer Edit 3')">View</button>
+          </div>
         </div>
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80" alt="Pastel Pantsuit" loading="lazy">
+          <img src="blackmodern.png" alt="Black Modern Dress" loading="lazy">
           <span class="product-tag">New</span>
         </div>
         <div class="product-info">
-          <h4>Elegant Office Wear</h4>
-          <div class="product-price">&#8377;4,299 <span class="original">&#8377;5,999</span></div>
-          <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Pastel%20Pantsuit%20%E2%82%B9%204,299" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</a>
+          <h4>Black Modern Dress</h4>
+          <div class="product-price">&#8377;3,299 <span class="original">&#8377;4,599</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20Modern%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('blackmodern.png', 'Black Modern Dress')">View</button>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="section-header reveal">
+      <span class="section-label">Shop</span>
+      <h2 class="section-title">Shop All</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Explore our handpicked collections crafted for every occasion.</p>
+    </div>
+    <div class="categories-grid">
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress1.png" alt="Black Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Black Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress1.png', 'Black Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Blue Sunflower Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Blue%20Sunflower%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress2.png', 'Blue Sunflower Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress3.png" alt="Green Color Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Green Color Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Green%20Color%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress3.png', 'Green Color Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress4.png" alt="Meroon Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Meroon Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Meroon%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress4.png', 'Meroon Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress5.png" alt="Multi Color Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Multi Color Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Multi%20Color%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress5.png', 'Multi Color Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Orange Dress Trendy</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress%20Trendy" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress6.png', 'Orange Dress Trendy')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress7.png" alt="Orange Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Orange Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress7.png', 'Orange Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress8.png" alt="Sky Blue Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Sky Blue Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Sky%20Blue%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress8.png', 'Sky Blue Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress9.png" alt="Yellow Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Yellow Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Yellow%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress9.png', 'Yellow Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress10.png" alt="Ash Color Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Ash Color Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Ash%20Color%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress10.png', 'Ash Color Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress11.png" alt="Black With Birds" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Black With Birds</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20With%20Birds" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress11.png', 'Black With Birds')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress12.png" alt="White Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>White Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20White%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress12.png', 'White Dress')">View</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -888,45 +1132,58 @@
     <div class="products-grid">
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80" alt="Classic Cotton Kurti" loading="lazy">
+          <img src="dress11.png" alt="Black With Birds" loading="lazy">
           <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
         </div>
         <div class="product-info">
-          <h4>Classic Cotton Kurti</h4>
-          <div class="product-price">&#8377;1,999 <span class="original">&#8377;2,999</span></div>
-          <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Classic%20Cotton%20Kurti%20%E2%82%B9%201,999" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</a>
+          <h4>Black With Birds</h4>
+          <div class="product-price">&#8377;2,999 <span class="original">&#8377;3,999</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20With%20Birds" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress11.png', 'Black With Birds')">View</button>
+          </div>
         </div>
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80" alt="Red Velvet Lehenga" loading="lazy">
+          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy">
           <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
         </div>
         <div class="product-info">
-          <h4>&nbsp;Lehenga</h4>
-          <div class="product-price">&#8377;8,999 <span class="original">&#8377;12,999</span></div>
-          <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Red%20Velvet%20Lehenga%20%E2%82%B9%208,999" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</a>
+          <h4>Blue Sunflower Dress</h4>
+          <div class="product-price">&#8377;2,499 <span class="original">&#8377;3,499</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Blue%20Sunflower%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress2.png', 'Blue Sunflower Dress')">View</button>
+          </div>
         </div>
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80" alt="Embroidered Anarkali" loading="lazy">
+          <img src="dress9.png" alt="Yellow Dress" loading="lazy">
           <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
         </div>
         <div class="product-info">
-          <h4>Embroidered Gown</h4>
-          <div class="product-price">&#8377;4,499 <span class="original">&#8377;6,499</span></div>
-          <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Embroidered%20Anarkali%20%E2%82%B9%204,499" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</a>
+          <h4>Yellow Dress</h4>
+          <div class="product-price">&#8377;2,299 <span class="original">&#8377;3,299</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Yellow%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress9.png', 'Yellow Dress')">View</button>
+          </div>
         </div>
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80" alt="Silk Palazzo Set" loading="lazy">
+          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy">
           <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
         </div>
-        <div class="product-info"><br><h4>Dresses</h4>
-          <div class="product-price">₹3,799 <span class="original">₹5,299</span></div>
-          <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Silk%20Palazzo%20Set%20%E2%82%B9%203,799" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</a>
+        <div class="product-info">
+          <h4>Orange Dress Trendy</h4>
+          <div class="product-price">&#8377;2,699 <span class="original">&#8377;3,699</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress%20Trendy" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress6.png', 'Orange Dress Trendy')">View</button>
+          </div>
         </div>
       </div>
     </div>
@@ -978,6 +1235,46 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-header reveal">
+      <span class="section-label">FAQs</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Everything you need to know before placing your order.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item active">
+        <button class="faq-question">How do I place an order? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">You can place an order by clicking the <strong>Buy</strong> button on any product, which will open a WhatsApp chat with our team. Simply send us the product name and your details, and we'll take it from there.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What payment methods do you accept? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">We accept UPI (Google Pay, PhonePe, Paytm), bank transfers, and cash on delivery for local orders in Hyderabad.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you deliver to my city? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Yes, we ship across India via trusted courier partners. Shipping charges vary by location and will be communicated at the time of order confirmation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What is your return and exchange policy? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">We accept exchanges within 7 days of delivery if the product is unused with tags attached. Custom-stitched items are not eligible for return. Please contact us on WhatsApp to initiate an exchange.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How long does delivery take? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Delivery usually takes 5–8 business days depending on your location. Hyderabad local orders can be delivered within 2–3 days.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I get custom stitching? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Absolutely! We offer customization on most products. Reach out to us on WhatsApp with your measurements and preferences, and we'll create a piece tailored just for you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How do I care for my ethnic wear? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Dry clean only for embroidered and heavy fabrics. Cotton kurtis can be hand washed in cold water. Store in a cool, dry place away from direct sunlight.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- NEWSLETTER -->
   <section class="newsletter" id="contact">
     <div class="section-header reveal">
@@ -1007,11 +1304,12 @@
       <div>
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#categories">Categories</a></li>
+          <li><a href="#categories">Shop</a></li>
           <li><a href="#new-arrivals">New Arrivals</a></li>
           <li><a href="#best-sellers">Best Sellers</a></li>
           <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#about">Our Story</a></li>
+<li><a href="#about">Our Story</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
@@ -1038,12 +1336,91 @@
     </div>
   </footer>
 
+  <!-- VIEW MODAL -->
+  <div class="view-modal" id="viewModal" onclick="closeView(event)">
+    <div class="view-modal-content">
+      <button class="view-modal-close" onclick="closeView()">&times;</button>
+      <img id="viewModalImg" src="" alt="Product View">
+      <div class="view-modal-name" id="viewModalName"></div>
+      <a class="view-modal-wa" id="viewModalWa" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress11.png" alt="Black With Birds" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Black With Birds</h4>
+          <div class="product-price">&#8377;2,999 <span class="original">&#8377;3,999</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20With%20Birds" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress11.png', 'Black With Birds')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Blue Sunflower Dress</h4>
+          <div class="product-price">&#8377;3,299 <span class="original">&#8377;4,499</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Blue%20Sunflower%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress2.png', 'Blue Sunflower Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress9.png" alt="Yellow Dress" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Yellow Dress</h4>
+          <div class="product-price">&#8377;2,799 <span class="original">&#8377;3,799</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Yellow%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress9.png', 'Yellow Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Orange Dress Trendy</h4>
+          <div class="product-price">&#8377;3,199 <span class="original">&#8377;4,299</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress%20Trendy" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress6.png', 'Orange Dress Trendy')">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/919652995470" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <script>
+    // View modal
+    function openView(imgSrc, name) {
+      document.getElementById('viewModalImg').src = imgSrc;
+      document.getElementById('viewModalName').textContent = name;
+      document.getElementById('viewModalWa').href = 'https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20enquire%20about%20' + encodeURIComponent(name);
+      document.getElementById('viewModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeView(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('viewModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
@@ -1086,6 +1463,60 @@
         }
       });
     });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I place an order?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You can place an order by clicking the Buy button on any product, which will open a WhatsApp chat with our team. Simply send us the product name and your details, and we'll take it from there." }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We accept UPI (Google Pay, PhonePe, Paytm), bank transfers, and cash on delivery for local orders in Hyderabad." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you deliver to my city?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, we ship across India via trusted courier partners. Shipping charges vary by location and will be communicated at the time of order confirmation." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your return and exchange policy?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We accept exchanges within 7 days of delivery if the product is unused with tags attached. Custom-stitched items are not eligible for return." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does delivery take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Delivery usually takes 5–8 business days depending on your location. Hyderabad local orders can be delivered within 2–3 days." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get custom stitching?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely! We offer customization on most products. Reach out to us on WhatsApp with your measurements and preferences." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I care for my ethnic wear?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dry clean only for embroidered and heavy fabrics. Cotton kurtis can be hand washed in cold water. Store in a cool, dry place away from direct sunlight." }
+      }
+    ]
+  }
   </script>
 </body>
 </html>
