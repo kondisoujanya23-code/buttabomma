@@ -762,6 +762,26 @@
     .view-modal-wa:hover {
       background: #128C7E;
     }
+    .view-modal-back {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding: 10px;
+      background: none;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      width: 100%;
+      transition: var(--transition);
+    }
+    .view-modal-back:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
     @media (max-width: 768px) {
       .view-modal { padding: 20px; }
     }
@@ -809,7 +829,7 @@
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
       .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
       .product-img-wrap { height: 240px; }
-      .categories-grid { grid-template-columns: 1fr; }
+      .categories-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
       .cat-card { height: 280px; }
       .reviews-grid { grid-template-columns: 1fr; }
       .reels-grid { grid-template-columns: repeat(2, 1fr); }
@@ -821,6 +841,7 @@
       .products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
       .product-img-wrap { height: 200px; }
       .hero-title { font-size: 2.5rem; }
+      .categories-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
     }
 
     /* FAQ */
@@ -1316,6 +1337,7 @@
       <img id="viewModalImg" src="" alt="Product View">
       <div class="view-modal-name" id="viewModalName"></div>
       <a class="view-modal-wa" id="viewModalWa" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+      <button class="view-modal-back" onclick="closeView()"><i class="fas fa-arrow-left"></i> Back</button>
     </div>
   </div>
 
