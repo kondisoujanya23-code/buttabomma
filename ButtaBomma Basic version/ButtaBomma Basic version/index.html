@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Buttabomma | Luxury Ethnic Wear Boutique - Hyderabad</title>
+  <meta name="description" content="The Buttabomma - Premium luxury ethnic wear boutique in Kondapur, Hyderabad. Explore designer kurtis, trendy ethnic wear for women, and handmade couture.">
+  <meta name="keywords" content="luxury ethnic wear Hyderabad, designer kurtis online, women boutique Hyderabad, trendy ethnic wear for women, The Buttabomma, ethnic boutique Kondapur">
+  <meta name="author" content="The Buttabomma">
+  <meta property="og:title" content="The Buttabomma | Luxury Ethnic Wear Boutique">
+  <meta property="og:description" content="Premium luxury ethnic wear boutique in Hyderabad. Designer kurtis, couture, and trendy ethnic wear for women.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "The Buttabomma",
+    "description": "Luxury ethnic wear boutique in Hyderabad",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kondapur",
+      "addressRegion": "Hyderabad",
+      "addressCountry": "IN"
+    },
+    "email": "Buttabomma.2024@gmail.com",
+    "telephone": "+919652995470",
+    "url": "https://thebuttabomma.com"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --primary: #4B1024;
+      --primary-light: #6e1a36;
+      --secondary: #D4B06A;
+      --secondary-light: #e8cf8a;
+      --bg: #F8F4EE;
+      --bg-dark: #f0e8de;
+      --text: #2a2a2a;
+      --text-light: #6b6b6b;
+      --white: #ffffff;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Poppins', sans-serif;
+      --shadow: 0 4px 20px rgba(75, 16, 36, 0.08);
+      --shadow-lg: 0 8px 40px rgba(75, 16, 36, 0.12);
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--secondary); border-radius: 4px; }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 18px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: var(--transition);
+      background: transparent;
+    }
+    .navbar.scrolled {
+      background: rgba(248, 244, 238, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(75, 16, 36, 0.06);
+      padding: 12px 40px;
+    }
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: var(--transition);
+    }
+    .scrolled .nav-logo { color: var(--primary); }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    .scrolled .nav-links a { color: var(--text); }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--secondary); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+    .nav-toggle span {
+      width: 24px; height: 1.5px;
+      background: var(--white);
+      transition: var(--transition);
+    }
+    .scrolled .nav-toggle span { background: var(--primary); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--primary) 0%, #2d0a16 100%);
+      display: flex; align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.65;
+      transform: scale(1);
+      animation: heroZoom 25s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(75,16,36,0.45) 0%, rgba(45,10,22,0.55) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1400px; margin: 0 auto;
+      padding: 0 40px;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      border: 1px solid var(--secondary);
+      padding: 8px 20px;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.3s forwards;
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      max-width: 800px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.5s forwards;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, var(--secondary), #f0d080, var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: rgba(248, 244, 238, 0.8);
+      font-weight: 300;
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.7s forwards;
+    }
+    .hero-btns {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.9s forwards;
+    }
+    .btn-primary, .btn-secondary {
+      padding: 14px 36px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--primary);
+      border: 2px solid var(--secondary);
+    }
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--secondary);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(248, 244, 238, 0.3);
+    }
+    .btn-secondary:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+    .hero-scroll {
+      position: absolute; bottom: 40px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(248, 244, 238, 0.5);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: float 2s ease-in-out infinite;
+    }
+    .hero-scroll i { font-size: 1rem; }
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(30px); }
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 100px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-light);
+      max-width: 540px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    .divider {
+      width: 60px; height: 1.5px;
+      background: var(--secondary);
+      margin: 16px auto;
+    }
+
+    /* CATEGORIES */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .cat-card {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .cat-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .cat-card:hover img { transform: scale(1.05); }
+    .cat-card .cat-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(75,16,36,0.8) 0%, transparent 60%);
+      transition: var(--transition);
+    }
+    .cat-card .cat-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 32px 24px;
+      z-index: 2;
+    }
+    .cat-card .cat-info h3 {
+      font-family: var(--font-heading);
+      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .cat-card .cat-info span {
+      color: var(--secondary);
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+
+    /* PRODUCTS */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .product-card {
+      background: var(--white);
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .product-img-wrap {
+      position: relative;
+      height: 340px;
+      overflow: hidden;
+    }
+    .product-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .product-card:hover .product-img-wrap img { transform: scale(1.05); }
+    .product-tag {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      font-weight: 400;
+    }
+    .product-wish {
+      position: absolute; top: 12px; right: 12px;
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.9);
+      border: none; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: var(--transition);
+      font-size: 0.9rem; color: var(--text);
+    }
+    .product-wish:hover { background: var(--primary); color: var(--white); }
+    .product-info {
+      padding: 18px 16px 20px;
+    }
+    .product-info h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .product-info .product-price {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+    .product-info .product-price .original {
+      color: var(--text-light);
+      text-decoration: line-through;
+      font-size: 0.85rem;
+      margin-left: 8px;
+      font-weight: 300;
+    }
+    .product-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .product-actions .whatsapp-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      background: #25D366;
+      color: var(--white);
+      border: none;
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      flex: 1;
+      justify-content: center;
+    }
+    .product-actions .whatsapp-btn:hover {
+      background: #128C7E;
+    }
+    .product-actions .view-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      flex: 1;
+      justify-content: center;
+    }
+    .product-actions .view-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    /* INSTAGRAM REELS */
+    .reels-section {
+      background: var(--primary);
+      padding: 100px 40px;
+    }
+    .reels-section .section-title { color: var(--white); }
+    .reels-section .section-desc { color: rgba(248, 244, 238, 0.7); }
+    .reels-section .divider { background: var(--secondary); }
+    .reels-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .reel-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      aspect-ratio: 9/16;
+      max-width: 100%;
+      background: rgba(0,0,0,0.05);
+    }
+    .reel-card:hover {
+      transform: translateY(-2px);
+    }
+    .reel-embed {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* REVIEWS */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .review-card {
+      background: var(--white);
+      padding: 36px 32px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .review-card .stars {
+      color: var(--secondary);
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    .review-card p {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .review-card .reviewer {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .review-card .reviewer-loc {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ABOUT */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-image {
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+    }
+    .about-text h2 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .about-text .divider { margin: 16px 0 20px; }
+    .about-text p {
+      color: var(--text-light);
+      line-height: 1.9;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+    .about-sign {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--secondary);
+      font-style: italic;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--primary);
+      text-align: center;
+      padding: 100px 40px;
+    }
+    .newsletter .section-title { color: var(--white); }
+    .newsletter .section-desc { color: rgba(248, 244, 238, 0.7); }
+    .newsletter .divider { background: var(--secondary); }
+    .news-form {
+      max-width: 500px;
+      margin: 32px auto 0;
+      display: flex;
+      gap: 0;
+    }
+    .news-form input {
+      flex: 1;
+      padding: 16px 20px;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+      outline: none;
+    }
+    .news-form input::placeholder { color: rgba(248, 244, 238, 0.5); }
+    .news-form button {
+      padding: 16px 28px;
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .news-form button:hover { background: var(--secondary-light); }
+
+    /* FOOTER */
+    .footer {
+      background: var(--bg);
+      color: var(--primary);
+      padding: 80px 40px 30px;
+    }
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand .nav-logo { color: var(--primary); font-size: 1.6rem; }
+    .footer-brand p {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .footer-social a {
+      width: 40px; height: 40px;
+      border: 1px solid rgba(75, 16, 36, 0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+    .footer-social a:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+    .footer h4 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 12px; }
+    .footer ul li a {
+      color: rgba(75, 16, 36, 0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 300;
+      transition: var(--transition);
+    }
+    .footer ul li a:hover { color: var(--secondary); }
+    .footer-contact li {
+      display: flex; gap: 12px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+    .footer-contact li i {
+      color: var(--secondary);
+      margin-top: 4px;
+      width: 16px;
+    }
+    .footer-contact li a {
+      color: var(--text-light);
+    }
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(75, 16, 36, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+    .footer-bottom a { color: var(--secondary); text-decoration: none; }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 999;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: var(--transition);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); }
+      50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.6); }
+    }
+
+    /* VIEW MODAL */
+    .view-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .view-modal.active {
+      display: flex;
+    }
+    .view-modal-content {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      background: var(--white);
+      padding: 16px;
+      border-radius: 4px;
+    }
+    .view-modal-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .view-modal-close {
+      position: absolute;
+      top: -40px; right: 0;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+      transition: var(--transition);
+    }
+    .view-modal-close:hover {
+      color: var(--secondary);
+    }
+    .view-modal-name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--primary);
+      text-align: center;
+      margin-top: 12px;
+    }
+    .view-modal-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 12px;
+      background: #25D366;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+      transition: var(--transition);
+    }
+    .view-modal-wa:hover {
+      background: #128C7E;
+    }
+    @media (max-width: 768px) {
+      .view-modal { padding: 20px; }
+    }
+
+    /* REVEAL ANIMATION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .about-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .about-image { height: 350px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .navbar { padding: 14px 20px; }
+      .navbar.scrolled { padding: 10px 20px; }
+      .nav-links {
+        position: fixed; top: 0; right: -100%;
+        width: 70%; height: 100vh;
+        background: var(--primary);
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+        transition: var(--transition);
+        gap: 24px;
+      }
+      .nav-links.open { right: 0; }
+      .scrolled .nav-links a { color: var(--white); }
+      .nav-links a { font-size: 1rem; }
+      .nav-toggle { display: flex; }
+      .hero-content { padding: 0 20px; }
+      .section { padding: 60px 20px; }
+      .reels-section { padding: 60px 20px; }
+      .newsletter { padding: 60px 20px; }
+      .footer { padding: 60px 20px 20px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+      .product-img-wrap { height: 240px; }
+      .categories-grid { grid-template-columns: 1fr; }
+      .cat-card { height: 280px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .reels-grid { grid-template-columns: repeat(2, 1fr); }
+      .news-form { flex-direction: column; }
+      .news-form button { width: 100%; }
+      .hero-badge { font-size: 0.65rem; padding: 6px 14px; }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .product-img-wrap { height: 200px; }
+      .hero-title { font-size: 2.5rem; }
+    }
+
+    /* FAQ */
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(75,16,36,0.1); padding: 0; }
+    .faq-question {
+      width: 100%; background: none; border: none; padding: 20px 0;
+      font-family: var(--font-heading); font-size: 1.05rem; color: var(--primary);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      text-align: left; gap: 16px;
+    }
+    .faq-question i { transition: var(--transition); font-size: 0.85rem; color: var(--secondary); }
+    .faq-item.active .faq-question i { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; padding: 0;
+      color: var(--text-light); font-size: 0.95rem; line-height: 1.7;
+    }
+    .faq-item.active .faq-answer { max-height: 300px; padding: 0 0 20px 0; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+     <a href="#" class="nav-logo"><img src="logo.jpg" alt="The Buttabomma" style="max-height:42px;width:auto;display:block;"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#categories">Shop</a></li>
+      <li><a href="#new-arrivals">New Arrivals</a></li>
+      <li><a href="#best-sellers">Best Sellers</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" style="background-image: url('hero section.png');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Est. 2024 — Hyderabad</div>
+      <h1 class="hero-title">Tradition with a Modern Glow <span></span></h1>
+      <p class="hero-sub">Discover our curated collection of luxury ethnic wear — handcrafted couture, designer kurtis, and timeless silhouettes for the modern woman.</p>
+      <div class="hero-btns">
+        <a href="#new-arrivals" class="btn-primary">Explore Collection <i class="fas fa-arrow-right"></i></a>
+        <a href="https://wa.me/919652995470" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> Enquire Now</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- NEW ARRIVALS -->
+  <section class="section" id="new-arrivals">
+    <div class="section-header reveal">
+      <span class="section-label">Fresh off the runway</span>
+      <h2 class="section-title">New Arrivals</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Be the first to wear our latest designs, crafted with love and tradition.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="summer1.png" alt="Summer Edit Dress" loading="lazy">
+          <span class="product-tag">New</span>
+        </div>
+        <div class="product-info">
+          <h4>Summer Edit</h4>
+          <div class="product-price">&#8377;2,499 <span class="original">&#8377;3,999</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Summer%20Edit%20Dress%20%E2%82%B9%202,499" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('summer1.png', 'Summer Edit')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="summer2.png" alt="Summer Edit 2 Dress" loading="lazy">
+          <span class="product-tag">New</span>
+        </div>
+        <div class="product-info">
+          <h4>Summer Edit 2</h4>
+          <div class="product-price">&#8377;2,799 <span class="original">&#8377;3,999</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Summer%20Edit%202%20Dress%20%E2%82%B9%202,799" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('summer2.png', 'Summer Edit 2')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="summer3.png" alt="Summer Edit 3 Dress" loading="lazy">
+          <span class="product-tag">New</span>
+        </div>
+        <div class="product-info">
+          <h4>Summer Edit 3</h4>
+          <div class="product-price">&#8377;2,599 <span class="original">&#8377;3,999</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Summer%20Edit%203%20Dress%20%E2%82%B9%202,599" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('summer3.png', 'Summer Edit 3')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="blackmodern.png" alt="Black Modern Dress" loading="lazy">
+          <span class="product-tag">New</span>
+        </div>
+        <div class="product-info">
+          <h4>Black Modern Dress</h4>
+          <div class="product-price">&#8377;3,299 <span class="original">&#8377;4,599</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20Modern%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('blackmodern.png', 'Black Modern Dress')">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="section-header reveal">
+      <span class="section-label">Shop</span>
+      <h2 class="section-title">Shop All</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Explore our handpicked collections crafted for every occasion.</p>
+    </div>
+    <div class="categories-grid">
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress1.png" alt="Black Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Black Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress1.png', 'Black Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Blue Sunflower Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Blue%20Sunflower%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress2.png', 'Blue Sunflower Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress3.png" alt="Green Color Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Green Color Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Green%20Color%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress3.png', 'Green Color Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress4.png" alt="Meroon Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Meroon Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Meroon%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress4.png', 'Meroon Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress5.png" alt="Multi Color Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Multi Color Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Multi%20Color%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress5.png', 'Multi Color Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Orange Dress Trendy</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress%20Trendy" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress6.png', 'Orange Dress Trendy')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress7.png" alt="Orange Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Orange Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress7.png', 'Orange Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress8.png" alt="Sky Blue Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Sky Blue Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Sky%20Blue%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress8.png', 'Sky Blue Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress9.png" alt="Yellow Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Yellow Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Yellow%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress9.png', 'Yellow Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress10.png" alt="Ash Color Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Ash Color Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Ash%20Color%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress10.png', 'Ash Color Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress11.png" alt="Black With Birds" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Black With Birds</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20With%20Birds" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress11.png', 'Black With Birds')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress12.png" alt="White Dress" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>White Dress</h4>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20White%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress12.png', 'White Dress')">View</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INSTAGRAM REELS -->
+  <section class="reels-section" id="reels">
+    <div class="section-header reveal">
+      <span class="section-label">Follow Us</span>
+      <h2 class="section-title">Instagram Reels</h2>
+      <div class="divider"></div>
+        <p class="section-desc">Reels from <a href="https://www.instagram.com/the_buttabomma/?hl=en" target="_blank" style="color:var(--secondary);text-decoration:none;">@the_buttabomma</a> — follow us on Instagram for daily style inspiration.</p>
+    </div>
+    <div class="reels-grid">
+      <div class="reel-card reveal">
+        <iframe src="https://www.instagram.com/reel/DJ4EnA2JQwu/embed" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media; clipboard-write" class="reel-embed" loading="lazy"></iframe>
+      </div>
+      <div class="reel-card reveal">
+        <iframe src="https://www.instagram.com/reel/DIgi9MrMseT/embed" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media; clipboard-write" class="reel-embed" loading="lazy"></iframe>
+      </div>
+      <div class="reel-card reveal">
+        <iframe src="https://www.instagram.com/reel/DJgNjuDzVGA/embed" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media; clipboard-write" class="reel-embed" loading="lazy"></iframe>
+      </div>
+      <div class="reel-card reveal">
+        <iframe src="https://www.instagram.com/reel/DPWB5LQiDXU/embed" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media; clipboard-write" class="reel-embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section class="section" id="best-sellers">
+    <div class="section-header reveal">
+      <span class="section-label">Customer Favorites</span>
+      <h2 class="section-title">Best Sellers</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Our most-loved pieces, handpicked by women who cherish elegance.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress11.png" alt="Black With Birds" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Black With Birds</h4>
+          <div class="product-price">&#8377;2,999 <span class="original">&#8377;3,999</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20With%20Birds" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress11.png', 'Black With Birds')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Blue Sunflower Dress</h4>
+          <div class="product-price">&#8377;2,499 <span class="original">&#8377;3,499</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Blue%20Sunflower%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress2.png', 'Blue Sunflower Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress9.png" alt="Yellow Dress" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Yellow Dress</h4>
+          <div class="product-price">&#8377;2,299 <span class="original">&#8377;3,299</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Yellow%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress9.png', 'Yellow Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Orange Dress Trendy</h4>
+          <div class="product-price">&#8377;2,699 <span class="original">&#8377;3,699</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress%20Trendy" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress6.png', 'Orange Dress Trendy')">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews">
+    <div class="section-header reveal">
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Real love from real women who wear The Buttabomma.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"Absolutely in love with my kurta! The fabric is so premium and the embroidery is exquisite. Truly a luxury experience."</p>
+        <div class="reviewer">— Ananya S.</div>
+        <div class="reviewer-loc">Hyderabad</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"The Buttabomma is my go-to for every occasion. Their collection is unique and the quality is unmatched. Highly recommended!"</p>
+        <div class="reviewer">— Priya M.</div>
+        <div class="reviewer-loc">Bangalore</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"I received so many compliments on my lehenga! The fit was perfect and the detailing is stunning. Thank you, Buttabomma!"</p>
+        <div class="reviewer">— Rhea K.</div>
+        <div class="reviewer-loc">Mumbai</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="about-wrap">
+      <div class="about-image reveal" style="background-image: url('logo.jpg');"></div>
+      <div class="about-text reveal">
+        <span class="section-label">Our Story</span>
+        <h2>The Buttabomma</h2>
+        <div class="divider"></div>
+        <p>Born in the heart of Hyderabad, The Buttabomma is more than a boutique — it's a celebration of heritage, craftsmanship, and the timeless beauty of Indian ethnic wear.</p>
+        <p>Every piece in our collection is thoughtfully curated, blending traditional artistry with contemporary silhouettes. We work directly with master artisans to bring you designs that are as unique as you are.</p>
+        <p>From hand-embroidered kurtis to opulent occasion wear, each garment tells a story of elegance, grace, and the enduring spirit of womanhood.</p>
+        <div class="about-sign">— The Buttabomma</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-header reveal">
+      <span class="section-label">FAQs</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Everything you need to know before placing your order.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item active">
+        <button class="faq-question">How do I place an order? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">You can place an order by clicking the <strong>Buy</strong> button on any product, which will open a WhatsApp chat with our team. Simply send us the product name and your details, and we'll take it from there.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What payment methods do you accept? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">We accept UPI (Google Pay, PhonePe, Paytm), bank transfers, and cash on delivery for local orders in Hyderabad.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you deliver to my city? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Yes, we ship across India via trusted courier partners. Shipping charges vary by location and will be communicated at the time of order confirmation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What is your return and exchange policy? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">We accept exchanges within 7 days of delivery if the product is unused with tags attached. Custom-stitched items are not eligible for return. Please contact us on WhatsApp to initiate an exchange.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How long does delivery take? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Delivery usually takes 5–8 business days depending on your location. Hyderabad local orders can be delivered within 2–3 days.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I get custom stitching? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Absolutely! We offer customization on most products. Reach out to us on WhatsApp with your measurements and preferences, and we'll create a piece tailored just for you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How do I care for my ethnic wear? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-answer">Dry clean only for embroidered and heavy fabrics. Cotton kurtis can be hand washed in cold water. Store in a cool, dry place away from direct sunlight.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="contact">
+    <div class="section-header reveal">
+      <span class="section-label">Stay Connected</span>
+      <h2 class="section-title">Join Our Circle</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Be the first to know about new arrivals, exclusive offers, and styling inspiration.</p>
+    </div>
+    <form class="news-form reveal" onsubmit="event.preventDefault(); alert('Thank you for subscribing to The Buttabomma!');">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+                 <a href="#" class="nav-logo"><img src="logo.jpg" alt="The Buttabomma" style="max-height:38px;width:auto;display:block;"></a>
+        <p>Luxury ethnic wear boutique based in Kondapur, Hyderabad. Curating timeless elegance for the modern woman since 2024.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/the_buttabomma" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/919652995470" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:Buttabomma.2024@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#categories">Shop</a></li>
+          <li><a href="#new-arrivals">New Arrivals</a></li>
+          <li><a href="#best-sellers">Best Sellers</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+<li><a href="#about">Our Story</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Collections</h4>
+        <ul>
+          <li><a href="https://wa.me/919652995470?text=I%20want%20to%20know%20more%20about%20Designer%20Kurtis">Designer Kurtis</a></li>
+          <li><a href="https://wa.me/919652995470?text=I%20want%20to%20know%20more%20about%20Ethnic%20Sets">Ethnic Sets</a></li>
+          <li><a href="https://wa.me/919652995470?text=I%20want%20to%20know%20more%20about%20Occasion%20Wear">Occasion Wear</a></li>
+          <li><a href="https://wa.me/919652995470?text=I%20want%20to%20know%20more%20about%20Couture">Couture</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i><span>Kondapur, Hyderabad, Telangana</span></li>
+          <li><i class="far fa-envelope"></i><a href="mailto:Buttabomma.2024@gmail.com" style="color: rgba(75,16,36,0.6);">Buttabomma.2024@gmail.com</a></li>
+          <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/919652995470" style="color: rgba(75,16,36,0.6);">+91 96529 95470</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 The Buttabomma. All rights reserved.</span>
+      <span>Crafted with <span style="color: var(--secondary);">&hearts;</span> in Hyderabad</span>
+    </div>
+  </footer>
+
+  <!-- VIEW MODAL -->
+  <div class="view-modal" id="viewModal" onclick="closeView(event)">
+    <div class="view-modal-content">
+      <button class="view-modal-close" onclick="closeView()">&times;</button>
+      <img id="viewModalImg" src="" alt="Product View">
+      <div class="view-modal-name" id="viewModalName"></div>
+      <a class="view-modal-wa" id="viewModalWa" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress11.png" alt="Black With Birds" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Black With Birds</h4>
+          <div class="product-price">&#8377;2,999 <span class="original">&#8377;3,999</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20With%20Birds" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress11.png', 'Black With Birds')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Blue Sunflower Dress</h4>
+          <div class="product-price">&#8377;3,299 <span class="original">&#8377;4,499</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Blue%20Sunflower%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress2.png', 'Blue Sunflower Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress9.png" alt="Yellow Dress" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Yellow Dress</h4>
+          <div class="product-price">&#8377;2,799 <span class="original">&#8377;3,799</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Yellow%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress9.png', 'Yellow Dress')">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy">
+          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h4>Orange Dress Trendy</h4>
+          <div class="product-price">&#8377;3,199 <span class="original">&#8377;4,299</span></div>
+          <div class="product-actions">
+            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress%20Trendy" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+            <button class="view-btn" onclick="openView('dress6.png', 'Orange Dress Trendy')">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919652995470" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // View modal
+    function openView(imgSrc, name) {
+      document.getElementById('viewModalImg').src = imgSrc;
+      document.getElementById('viewModalName').textContent = name;
+      document.getElementById('viewModalWa').href = 'https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20enquire%20about%20' + encodeURIComponent(name);
+      document.getElementById('viewModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeView(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('viewModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      navbar.classList.toggle('scrolled', currentScroll > 80);
+      lastScroll = currentScroll;
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll reveal animation
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I place an order?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You can place an order by clicking the Buy button on any product, which will open a WhatsApp chat with our team. Simply send us the product name and your details, and we'll take it from there." }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We accept UPI (Google Pay, PhonePe, Paytm), bank transfers, and cash on delivery for local orders in Hyderabad." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you deliver to my city?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, we ship across India via trusted courier partners. Shipping charges vary by location and will be communicated at the time of order confirmation." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your return and exchange policy?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We accept exchanges within 7 days of delivery if the product is unused with tags attached. Custom-stitched items are not eligible for return." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does delivery take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Delivery usually takes 5–8 business days depending on your location. Hyderabad local orders can be delivered within 2–3 days." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get custom stitching?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely! We offer customization on most products. Reach out to us on WhatsApp with your measurements and preferences." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I care for my ethnic wear?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dry clean only for embroidered and heavy fabrics. Cotton kurtis can be hand washed in cold water. Store in a cool, dry place away from direct sunlight." }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
