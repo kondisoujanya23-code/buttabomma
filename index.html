@@ -701,6 +701,8 @@
       align-items: center;
       justify-content: center;
       padding: 40px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .view-modal.active {
       display: flex;
@@ -712,6 +714,7 @@
       background: var(--white);
       padding: 16px;
       border-radius: 4px;
+      margin: auto;
     }
     .view-modal-content img {
       width: 100%;
@@ -719,10 +722,16 @@
       display: block;
       cursor: zoom-in;
       transition: transform 0.3s ease;
+      max-height: 70vh;
+      object-fit: contain;
     }
     .view-modal-content img.zoomed {
-      transform: scale(2);
+      transform: scale(1.8);
       cursor: zoom-out;
+    }
+    @media (max-width: 768px) {
+      .view-modal { padding: 10px; align-items: flex-start; padding-top: 20px; }
+      .view-modal-content img { max-height: 60vh; }
     }
     .view-modal-close {
       position: absolute;
@@ -781,9 +790,6 @@
     .view-modal-back:hover {
       background: var(--primary);
       color: var(--white);
-    }
-    @media (max-width: 768px) {
-      .view-modal { padding: 20px; }
     }
 
     /* REVEAL ANIMATION */
@@ -1336,7 +1342,7 @@
       <button class="view-modal-close" onclick="closeView()">&times;</button>
       <img id="viewModalImg" src="" alt="Product View">
       <div class="view-modal-name" id="viewModalName"></div>
-      <a class="view-modal-wa" id="viewModalWa" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+      <a class="view-modal-wa" id="viewModalWa" href="https://wa.me/919652995470" target="_blank"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
       <button class="view-modal-back" onclick="closeView()"><i class="fas fa-arrow-left"></i> Back</button>
     </div>
   </div>
