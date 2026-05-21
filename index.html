@@ -717,6 +717,12 @@
       width: 100%;
       height: auto;
       display: block;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+    .view-modal-content img.zoomed {
+      transform: scale(2);
+      cursor: zoom-out;
     }
     .view-modal-close {
       position: absolute;
@@ -883,7 +889,7 @@
     <div class="products-grid">
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="summer1.png" alt="Summer Edit Dress" loading="lazy">
+          <img src="summer1.png" alt="Summer Edit Dress" loading="lazy" style="cursor:pointer" onclick="openView('summer1.png', 'Summer Edit')">
           <span class="product-tag">New</span>
         </div>
         <div class="product-info">
@@ -897,7 +903,7 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="summer2.png" alt="Summer Edit 2 Dress" loading="lazy">
+          <img src="summer2.png" alt="Summer Edit 2 Dress" loading="lazy" style="cursor:pointer" onclick="openView('summer2.png', 'Summer Edit 2')">
           <span class="product-tag">New</span>
         </div>
         <div class="product-info">
@@ -911,7 +917,7 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="summer3.png" alt="Summer Edit 3 Dress" loading="lazy">
+          <img src="summer3.png" alt="Summer Edit 3 Dress" loading="lazy" style="cursor:pointer" onclick="openView('summer3.png', 'Summer Edit 3')">
           <span class="product-tag">New</span>
         </div>
         <div class="product-info">
@@ -925,7 +931,7 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="blackmodern.png" alt="Black Modern Dress" loading="lazy">
+          <img src="blackmodern.png" alt="Black Modern Dress" loading="lazy" style="cursor:pointer" onclick="openView('blackmodern.png', 'Black Modern Dress')">
           <span class="product-tag">New</span>
         </div>
         <div class="product-info">
@@ -951,10 +957,12 @@
     <div class="categories-grid">
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress1.png" alt="Black Dress" loading="lazy">
+          <img src="dress1.png" alt="Black Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress1.png', 'Black Dress')">
+          <span class="product-tag">New</span>
         </div>
         <div class="product-info">
           <h4>Black Dress</h4>
+          <div class="product-price">&#8377;1,999 <span class="original">&#8377;2,999</span></div>
           <div class="product-actions">
             <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
             <button class="view-btn" onclick="openView('dress1.png', 'Black Dress')">View</button>
@@ -963,22 +971,12 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy">
-        </div>
-        <div class="product-info">
-          <h4>Blue Sunflower Dress</h4>
-          <div class="product-actions">
-            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Blue%20Sunflower%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
-            <button class="view-btn" onclick="openView('dress2.png', 'Blue Sunflower Dress')">View</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-img-wrap">
-          <img src="dress3.png" alt="Green Color Dress" loading="lazy">
+          <img src="dress3.png" alt="Green Color Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress3.png', 'Green Color Dress')">
+          <span class="product-tag">New</span>
         </div>
         <div class="product-info">
           <h4>Green Color Dress</h4>
+          <div class="product-price">&#8377;2,299 <span class="original">&#8377;3,299</span></div>
           <div class="product-actions">
             <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Green%20Color%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
             <button class="view-btn" onclick="openView('dress3.png', 'Green Color Dress')">View</button>
@@ -987,10 +985,12 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress4.png" alt="Meroon Dress" loading="lazy">
+          <img src="dress4.png" alt="Meroon Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress4.png', 'Meroon Dress')">
+          <span class="product-tag">New</span>
         </div>
         <div class="product-info">
           <h4>Meroon Dress</h4>
+          <div class="product-price">&#8377;2,699 <span class="original">&#8377;3,699</span></div>
           <div class="product-actions">
             <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Meroon%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
             <button class="view-btn" onclick="openView('dress4.png', 'Meroon Dress')">View</button>
@@ -999,10 +999,12 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress5.png" alt="Multi Color Dress" loading="lazy">
+          <img src="dress5.png" alt="Multi Color Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress5.png', 'Multi Color Dress')">
+          <span class="product-tag">New</span>
         </div>
         <div class="product-info">
           <h4>Multi Color Dress</h4>
+          <div class="product-price">&#8377;3,299 <span class="original">&#8377;4,499</span></div>
           <div class="product-actions">
             <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Multi%20Color%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
             <button class="view-btn" onclick="openView('dress5.png', 'Multi Color Dress')">View</button>
@@ -1011,22 +1013,12 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy">
-        </div>
-        <div class="product-info">
-          <h4>Orange Dress Trendy</h4>
-          <div class="product-actions">
-            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress%20Trendy" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
-            <button class="view-btn" onclick="openView('dress6.png', 'Orange Dress Trendy')">View</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-img-wrap">
-          <img src="dress7.png" alt="Orange Dress" loading="lazy">
+          <img src="dress7.png" alt="Orange Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress7.png', 'Orange Dress')">
+          <span class="product-tag">New</span>
         </div>
         <div class="product-info">
           <h4>Orange Dress</h4>
+          <div class="product-price">&#8377;1,999 <span class="original">&#8377;2,999</span></div>
           <div class="product-actions">
             <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
             <button class="view-btn" onclick="openView('dress7.png', 'Orange Dress')">View</button>
@@ -1035,10 +1027,12 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress8.png" alt="Sky Blue Dress" loading="lazy">
+          <img src="dress8.png" alt="Sky Blue Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress8.png', 'Sky Blue Dress')">
+          <span class="product-tag">New</span>
         </div>
         <div class="product-info">
           <h4>Sky Blue Dress</h4>
+          <div class="product-price">&#8377;2,299 <span class="original">&#8377;3,299</span></div>
           <div class="product-actions">
             <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Sky%20Blue%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
             <button class="view-btn" onclick="openView('dress8.png', 'Sky Blue Dress')">View</button>
@@ -1047,22 +1041,12 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress9.png" alt="Yellow Dress" loading="lazy">
-        </div>
-        <div class="product-info">
-          <h4>Yellow Dress</h4>
-          <div class="product-actions">
-            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Yellow%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
-            <button class="view-btn" onclick="openView('dress9.png', 'Yellow Dress')">View</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-img-wrap">
-          <img src="dress10.png" alt="Ash Color Dress" loading="lazy">
+          <img src="dress10.png" alt="Ash Color Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress10.png', 'Ash Color Dress')">
+          <span class="product-tag">New</span>
         </div>
         <div class="product-info">
           <h4>Ash Color Dress</h4>
+          <div class="product-price">&#8377;2,499 <span class="original">&#8377;3,499</span></div>
           <div class="product-actions">
             <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Ash%20Color%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
             <button class="view-btn" onclick="openView('dress10.png', 'Ash Color Dress')">View</button>
@@ -1071,29 +1055,18 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress11.png" alt="Black With Birds" loading="lazy">
-        </div>
-        <div class="product-info">
-          <h4>Black With Birds</h4>
-          <div class="product-actions">
-            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20With%20Birds" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
-            <button class="view-btn" onclick="openView('dress11.png', 'Black With Birds')">View</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-img-wrap">
-          <img src="dress12.png" alt="White Dress" loading="lazy">
+          <img src="dress12.png" alt="White Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress12.png', 'White Dress')">
+          <span class="product-tag">New</span>
         </div>
         <div class="product-info">
           <h4>White Dress</h4>
+          <div class="product-price">&#8377;1,999 <span class="original">&#8377;2,999</span></div>
           <div class="product-actions">
             <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20White%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
             <button class="view-btn" onclick="openView('dress12.png', 'White Dress')">View</button>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -1132,7 +1105,7 @@
     <div class="products-grid">
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress11.png" alt="Black With Birds" loading="lazy">
+          <img src="dress11.png" alt="Black With Birds" loading="lazy" style="cursor:pointer" onclick="openView('dress11.png', 'Black With Birds')">
           <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
         </div>
         <div class="product-info">
@@ -1146,7 +1119,7 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy">
+          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress2.png', 'Blue Sunflower Dress')">
           <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
         </div>
         <div class="product-info">
@@ -1160,7 +1133,7 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress9.png" alt="Yellow Dress" loading="lazy">
+          <img src="dress9.png" alt="Yellow Dress" loading="lazy" style="cursor:pointer" onclick="openView('dress9.png', 'Yellow Dress')">
           <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
         </div>
         <div class="product-info">
@@ -1174,7 +1147,7 @@
       </div>
       <div class="product-card reveal">
         <div class="product-img-wrap">
-          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy">
+          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy" style="cursor:pointer" onclick="openView('dress6.png', 'Orange Dress Trendy')">
           <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
         </div>
         <div class="product-info">
@@ -1343,64 +1316,8 @@
       <img id="viewModalImg" src="" alt="Product View">
       <div class="view-modal-name" id="viewModalName"></div>
       <a class="view-modal-wa" id="viewModalWa" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-img-wrap">
-          <img src="dress11.png" alt="Black With Birds" loading="lazy">
-          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
-        </div>
-        <div class="product-info">
-          <h4>Black With Birds</h4>
-          <div class="product-price">&#8377;2,999 <span class="original">&#8377;3,999</span></div>
-          <div class="product-actions">
-            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Black%20With%20Birds" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
-            <button class="view-btn" onclick="openView('dress11.png', 'Black With Birds')">View</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-img-wrap">
-          <img src="dress2.png" alt="Blue Sunflower Dress" loading="lazy">
-          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
-        </div>
-        <div class="product-info">
-          <h4>Blue Sunflower Dress</h4>
-          <div class="product-price">&#8377;3,299 <span class="original">&#8377;4,499</span></div>
-          <div class="product-actions">
-            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Blue%20Sunflower%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
-            <button class="view-btn" onclick="openView('dress2.png', 'Blue Sunflower Dress')">View</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-img-wrap">
-          <img src="dress9.png" alt="Yellow Dress" loading="lazy">
-          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
-        </div>
-        <div class="product-info">
-          <h4>Yellow Dress</h4>
-          <div class="product-price">&#8377;2,799 <span class="original">&#8377;3,799</span></div>
-          <div class="product-actions">
-            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Yellow%20Dress" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
-            <button class="view-btn" onclick="openView('dress9.png', 'Yellow Dress')">View</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-img-wrap">
-          <img src="dress6.png" alt="Orange Dress Trendy" loading="lazy">
-          <span class="product-tag" style="background: var(--secondary); color: var(--primary);">Best Seller</span>
-        </div>
-        <div class="product-info">
-          <h4>Orange Dress Trendy</h4>
-          <div class="product-price">&#8377;3,199 <span class="original">&#8377;4,299</span></div>
-          <div class="product-actions">
-            <a href="https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20buy%20Orange%20Dress%20Trendy" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Buy</a>
-            <button class="view-btn" onclick="openView('dress6.png', 'Orange Dress Trendy')">View</button>
-          </div>
-        </div>
-      </div>
     </div>
+  </div>
 
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/919652995470" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
@@ -1411,6 +1328,7 @@
     // View modal
     function openView(imgSrc, name) {
       document.getElementById('viewModalImg').src = imgSrc;
+      document.getElementById('viewModalImg').classList.remove('zoomed');
       document.getElementById('viewModalName').textContent = name;
       document.getElementById('viewModalWa').href = 'https://wa.me/919652995470?text=Hi%20The%20Buttabomma!%20I%20want%20to%20enquire%20about%20' + encodeURIComponent(name);
       document.getElementById('viewModal').classList.add('active');
@@ -1418,9 +1336,16 @@
     }
     function closeView(e) {
       if (e && e.target !== e.currentTarget) return;
+      document.getElementById('viewModalImg').classList.remove('zoomed');
       document.getElementById('viewModal').classList.remove('active');
       document.body.style.overflow = '';
     }
+    // Toggle zoom on image click
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('viewModalImg').addEventListener('click', function() {
+        this.classList.toggle('zoomed');
+      });
+    });
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
